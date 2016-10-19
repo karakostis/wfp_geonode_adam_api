@@ -1,0 +1,21 @@
+# build artifacts
+*.pyc
+*.egg-info
+build
+target
+pip-log.txt
+MANIFEST
+dist
+.idea/
+# supporting stuff pulled in by paver script
+geonode/development.db
+/geoserver/
+downloaded
+
+#Temporary files
+*~
+*.swp
+
+# OSX specific
+.Python
+.DS_Store
