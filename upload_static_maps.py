@@ -64,5 +64,5 @@ def upload_static_map(upload_url, login_url, username, password, file_name, file
         return msg
 
 
-msg = upload_static_map("http://staging.geonode.wfp.org/wfpdocs/upload/", "http://staging.geonode.wfp.org/account/login/", "adam", "adam2016", "1.png", "/Users/dimitriskarakostis/Desktop/1.png", "aaa3235", "WFP", "2016-10-26 02:13")
+msg = upload_static_map("http://staging.geonode.wfp.org/wfpdocs/upload/", "http://staging.geonode.wfp.org/account/login/", "username", "password", "1.png", "/Users/dimitriskarakostis/Desktop/1.png", "aaa3235", "WFP", "2016-10-26 02:13")
 print msg
