@@ -1,6 +1,6 @@
 import requests
-def upload_static_map(upload_url, login_url, username, password, file_name,
-                      file_path, title, source, date, keywords):
+def upload_documents(upload_url, login_url, username, password, file_name,
+                      file_path, title):
     c = requests.session()
     # get the csrftoken
     try:
@@ -36,7 +36,6 @@ def upload_static_map(upload_url, login_url, username, password, file_name,
     try:
         headers = {
             "Referer": upload_url,
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
         }
         cookies = {
             "sessionid": sessionid,
@@ -46,11 +45,6 @@ def upload_static_map(upload_url, login_url, username, password, file_name,
         files = {'doc_file': (file_name, open(file_path, 'rb'))}
         payload = {
             'title': title,
-            'source': source,
-            'date': date,
-            'orientation': '0',
-            'page_format': '0',
-            'keywords': keywords,
             'permissions': '{"users":{"AnonymousUser":["view_resourcebase","download_resourcebase"]},"groups":{}}',
             'csrfmiddlewaretoken': csrftoken
         }
@@ -63,5 +57,5 @@ def upload_static_map(upload_url, login_url, username, password, file_name,
         return msg
 
 
-# msg = upload_static_map("http://staging.geonode.wfp.org/wfpdocs/upload/", "http://staging.geonode.wfp.org/account/login/", "dimitris.karakostis", "1234", "1.png", "/Users/dimitriskarakostis/Desktop/1.png", "title", "WFP", "2016-10-26 02:13")
+msg = upload_documents("http://staging.geonode.wfp.org/documents/upload", "http://staging.geonode.wfp.org/account/login/", "dimitris.karakostis", "1234", "image_magick.txt", "/Users/dimitriskarakostis/Desktop/image_magick.txt", "title")
 # print msg
