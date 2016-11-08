@@ -48,10 +48,12 @@ def upload_documents(upload_url, login_url, username, password, file_name,
             'permissions': '{"users":{"AnonymousUser":["view_resourcebase","download_resourcebase"]},"groups":{}}',
             'csrfmiddlewaretoken': csrftoken
         }
-        #print payload
+        # print payload
+        # print r.status_code
         r = c.post(upload_url, files=files, data=payload, headers=headers)
-        #print r.headers
-        #print r.status_code
+        # print r.url
+        msg = r.url.replace('metadata', 'download')
+        return msg
     except:
         msg = "Error uploading file"
         return msg
