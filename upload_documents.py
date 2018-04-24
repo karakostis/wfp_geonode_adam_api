@@ -16,12 +16,15 @@ def upload_documents(upload_url, login_url, username, password, file_name,
             "password": password,
             "csrfmiddlewaretoken": csrftoken
         }
+        print ("logindata", login_data)
         headers_login = {
             'Referer': login_url
         }
+        print (headers_login)
         r = c.post(login_url, data=login_data, headers=headers_login)
+
         sessionid = c.cookies['sessionid']
-        #print sessionid
+
     except:
         msg = "Error login in."
         return msg
@@ -59,5 +62,5 @@ def upload_documents(upload_url, login_url, username, password, file_name,
         return msg
 
 
-msg = upload_documents("http://staging.geonode.wfp.org/documents/upload", "http://staging.geonode.wfp.org/account/login/", "dimitris.karakostis", "1234", "image_magick.txt", "/Users/dimitriskarakostis/Desktop/image_magick.txt", "title")
-# print msg
+msg = upload_documents("https://staging.geonode.wfp.org/documents/upload", "https://staging.geonode.wfp.org/account/login/", "username", "pass", "image_magick.txt", "/Users/dimitriskarakostis/Desktop/image_magick.txt", "title")
+print msg
