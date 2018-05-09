@@ -66,6 +66,11 @@ def delete_static_map(url_2, login_url, username, password):
 
         ts_names_uniques = list(set(ts_names)) # get unique values of TS by converting list to set
         lists_ts = {key:[] for key in ts_names_uniques}
+        print lists_ts
+
+        for key in ts_names_uniques:
+            lists_ts[key] = []
+        print lists_ts
 
         # itterate the list and seperate them in different lists (or dictionaries)
         for whole_name in events:
@@ -110,7 +115,7 @@ def delete_static_map(url_2, login_url, username, password):
 
                             try:
                                 # post request!!
-                                #r = c.post(delete_url, data=payload, headers=headers)
+                                r = c.post(delete_url, data=payload, headers=headers)
                                 r.status_code = 500
                                 print r.status_code
                                 if r.status_code != 200:
@@ -136,5 +141,5 @@ def delete_static_map(url_2, login_url, username, password):
 
 
 
-msg = delete_static_map("https://geonode.wfp.org/wfpdocs/upload/", "https://geonode.wfp.org/account/login/", "username", "pass")
+msg = delete_static_map("https://geonode.wfp.org/wfpdocs/upload/", "https://geonode.wfp.org/account/login/", "adam", "adam2016")
 # print msg
