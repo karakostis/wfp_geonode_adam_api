@@ -141,5 +141,5 @@ def delete_static_map(url_2, login_url, username, password):
 
 
 
-msg = delete_static_map("https://geonode.wfp.org/wfpdocs/upload/", "https://geonode.wfp.org/account/login/", "adam", "adam2016")
+msg = delete_static_map("https://geonode.wfp.org/wfpdocs/upload/", "https://geonode.wfp.org/account/login/", "user", "pass")
 # print msg

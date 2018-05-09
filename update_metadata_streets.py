@@ -267,5 +267,5 @@ def upload_documents(login_url, username, password):
         return msg
 
 
-msg = upload_documents("https://geonode.wfp.org/account/login/", "dimitris.karakostis", "Asalways1249#")
+msg = upload_documents("https://geonode.wfp.org/account/login/", "user", "pass")
 #print msg
